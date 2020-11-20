@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+       - printenv
+       - npm install -g npm@latest
+       - npm i aws-amplify styled-components react-animations react-rating react-router-dom simple-flexbox beauty-stars
+  build:
+    commands:
+      - npm install
+      - npm -v
+      - npm run build
+  post_build:
+    commands:
+       - echo listing build files
+       - ls ./build
+
+artifacts:
+  files:
+    - "**/*"
+  discard-paths: no
+  base-directory: build
