@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import ProgressBar from "./progress-bar.component";
-import { progressData } from "./data";
+import { progressData } from "../public/data";
 
 function App() {
   return (
