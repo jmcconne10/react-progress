@@ -23,7 +23,7 @@ class Staticprogress extends React.Component {
 
   
     componentDidMount() {
-      fetch("http://hailinghails.com/myRide.json")
+      fetch("http://hailinghails.com/progress.json")
         .then(res => res.json())
         .then(
           result => {
@@ -52,7 +52,7 @@ class Staticprogress extends React.Component {
             <div>
               {items.map(item => (
                 <div>
-                    <h1>{item.rideDate}</h1>
+                    <h1>{item.name}</h1>
                 </div>
             
               ))}
