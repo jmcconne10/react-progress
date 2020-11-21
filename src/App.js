@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import ProgressBar from "./progress-bar.component";
+import Staticprogress from "./Staticprogress";
 import { progressData } from "./data";
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
             </td>
             <td>
               <ProgressBar key={idx} bgcolor={"#58ff33"} completed={item.completed} />
+            </td>
+            <td>
+              <Staticprogress />
             </td>
           </tr>
         </tbody>
