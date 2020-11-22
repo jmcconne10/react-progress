@@ -28,6 +28,7 @@ class Staticprogress extends React.Component {
             });
           }
         );
+   
     }
 
     render() {
