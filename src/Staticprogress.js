@@ -6,24 +6,19 @@ class Staticprogress extends React.Component {
       super(props);
       console.log(props)
       this.state = {
-        showRides: true,
-        items: [],
-        rideDate: null,
-        status: null
+        items: []
       };
     }
 
-    handleClick(rideDate, startTime) {
-      this.setState({showRides: !this.state.showRides});
-      this.setState({
-                      rideDate: rideDate,
-                      status: startTime
-                    });
-      console.log("Button Clicked Early")
-    } 
-
-  
     componentDidMount() {
+      this.timer = setInterval(()=> this.getItems(), 1000);
+    }
+  
+    componentWillUnmount() {
+      this.timer = null;
+    }
+
+    getItems() {
       fetch("http://hailinghails.com/progress.json")
         .then(res => res.json())
         .then(
@@ -41,14 +36,12 @@ class Staticprogress extends React.Component {
             });
           }
         );
+   
     }
-
-    
 
     render() {
       const { error, isLoaded, items } = this.state;
    
-
       return ( 
             <div>
               {items.map(item => (
