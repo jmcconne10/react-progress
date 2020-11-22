@@ -46,12 +46,23 @@ class Animatedprogress extends React.Component {
         return ( 
               <div>
                     {items.map(item => (
-
-                        <ProgressBar 
+                 
+                 <table>
+                 <tbody>
+                 <tr>
+  
+                     <h1> {item.name} </h1>
+                </tr>
+                     
+                <tr>
+                     <ProgressBar 
                         percent={item.completed} 
                         filledBackground="linear-gradient(to right, #fefb72, #f0bb31)" 
                         />   
-                                    
+                 </tr>
+                 </tbody>
+                 </table>
+                     
                     ))}
               </div>         
         )
