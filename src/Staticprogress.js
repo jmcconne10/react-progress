@@ -1,5 +1,7 @@
 import React from 'react';
 import ProgressBar from "./progress-bar.component";
+import "./App.css";
+
 
 class Staticprogress extends React.Component {
     constructor(props) {
@@ -53,7 +55,7 @@ class Staticprogress extends React.Component {
                         <h1> {item.name} </h1>
                         </td>
                         <td>
-                        <ProgressBar bgcolor={"#58ff33"} completed={item.completed} />
+                          <ProgressBar bgcolor={"#58ff33"} completed={item.completed} />
                         </td>
                     </tr>
                     </tbody>
