@@ -19,7 +19,7 @@ class Staticprogress extends React.Component {
     }
 
     getItems() {
-      fetch("http://hailinghails.com/progress.json")
+      fetch("http://jmcconnellportfolio.com/progress.json")
         .then(res => res.json())
         .then(
           result => {
