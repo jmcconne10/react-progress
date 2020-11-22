@@ -11,6 +11,14 @@ class Staticprogress extends React.Component {
     }
 
     componentDidMount() {
+      this.timer = setInterval(()=> this.getItems(), 1000);
+    }
+  
+    componentWillUnmount() {
+      this.timer = null;
+    }
+
+    getItems() {
       fetch("http://hailinghails.com/progress.json")
         .then(res => res.json())
         .then(
