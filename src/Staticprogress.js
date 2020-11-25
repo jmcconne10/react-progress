@@ -11,7 +11,7 @@ class Staticprogress extends React.Component {
         items: []
       };
     }
-
+    
     componentDidMount() {
       this.timer = setInterval(()=> this.getItems(), 1000);
     }
@@ -44,26 +44,24 @@ class Staticprogress extends React.Component {
     render() {
       const { error, isLoaded, items } = this.state;
    
-      return ( 
-            <div>
-              {items.map(item => (
-
-                    <table>
-                    <tbody>
-                    <tr>
-                        <td>
-                        <h1> {item.name} </h1>
-                        </td>
-                        <td>
-                          <ProgressBar bgcolor={"#58ff33"} completed={item.completed} />
-                        </td>
-                    </tr>
-                    </tbody>
-                    </table>
-            
-              ))}
-            </div>         
-      )
+      return (
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Progress</th>
+            </tr>
+          </thead>
+          <tbody>
+          {items.map(item => (
+              <tr key={item.name}>
+                <td>{item.name}</td>
+                <td><ProgressBar bgcolor={"#58ff33"} completed={item.completed} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      );
     }
   }
 
