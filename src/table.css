@@ -1,0 +1,17 @@
+td {
+  height: 70px;
+  padding: 20px
+}
+
+.tableAnimated{
+  border: 1px solid black;
+  width: 90%;
+}
+
+.NameColumn {
+  width: 20%;
+}
+
+.ProgressColumn {
+  width: 80%;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from "./progress-bar.component";
 import "./App.css";
-
+import "./table.css";
 
 class Staticprogress extends React.Component {
     constructor(props) {
@@ -43,10 +43,10 @@ class Staticprogress extends React.Component {
 
     render() {
       const { error, isLoaded, items } = this.state;
-   
+      
       return (
         <table>
-          <thead>
+          <thead >
             <tr>
               <th>Name</th>
               <th>Progress</th>
@@ -56,7 +56,7 @@ class Staticprogress extends React.Component {
           {items.map(item => (
               <tr key={item.name}>
                 <td>{item.name}</td>
-                <td><ProgressBar bgcolor={"#58ff33"} completed={item.completed} /></td>
+                <td width={'40%'}><ProgressBar bgcolor={"#58ff33"} completed={item.completed} /></td>
               </tr>
             ))}
           </tbody>

@@ -44,28 +44,28 @@ class Animatedprogress extends React.Component {
         const { error, isLoaded, items } = this.state;
      
         return ( 
-              <div>
-                    {items.map(item => (
-                 
-                 <table>
-                 <tbody>
-                 <tr>
-  
-                     <h1> {item.name} </h1>
-                </tr>
-                     
-                <tr>
-                     <ProgressBar 
-                        percent={item.completed} 
-                        filledBackground="linear-gradient(to right, #fefb72, #f0bb31)" 
-                        />   
-                 </tr>
-                 </tbody>
-                 </table>
-                     
+                <table className="tableAnimated">
+                <thead >
+                  <tr>
+                    <th>Name</th>
+                    <th>Progress</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {items.map(item => (
+                      <tr key={item.name}>
+                        <td className="NameColumn">{item.name}</td>
+                        <td className="ProgressColumn">                     
+                          <ProgressBar 
+                          percent={item.completed} 
+                          filledBackground="linear-gradient(to right, #fefb72, #f0bb31)" />   
+                        </td>
+                      </tr>
                     ))}
-              </div>         
-        )
+                  </tbody>
+                </table> 
+    
+              )
       }
     }
   
