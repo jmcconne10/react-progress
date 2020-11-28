@@ -20,7 +20,7 @@ class Animatedprogress extends React.Component {
       }
   
       getItems() {
-        fetch("https://jmcconnellportfolio.com/progress.json")
+        fetch("https://jmcconnellportfolio.com/updates.json")
           .then(res => res.json())
           .then(
             result => {

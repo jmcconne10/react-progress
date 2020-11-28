@@ -21,7 +21,7 @@ class Staticprogress extends React.Component {
     }
 
     getItems() {
-      fetch("https://jmcconnellportfolio.com/progress.json")
+      fetch("https://jmcconnellportfolio.com/updates.json")
         .then(res => res.json())
         .then(
           result => {
@@ -45,7 +45,7 @@ class Staticprogress extends React.Component {
       const { error, isLoaded, items } = this.state;
       
       return (
-        <table>
+        <table className="tableAnimated">
           <thead >
             <tr>
               <th>Name</th>
@@ -55,8 +55,8 @@ class Staticprogress extends React.Component {
           <tbody>
           {items.map(item => (
               <tr key={item.name}>
-                <td>{item.name}</td>
-                <td width={'40%'}><ProgressBar bgcolor={"#58ff33"} completed={item.completed} /></td>
+                <td className="NameColumn">{item.name}</td>
+                <td className="ProgressColumn"><ProgressBar bgcolor={"#58ff33"} completed={item.completed} /></td>
               </tr>
             ))}
           </tbody>
