@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from "./progress-bar.component";
 import "./App.css";
-
+import "./table.css";
 
 class Staticprogress extends React.Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class Staticprogress extends React.Component {
         items: []
       };
     }
-
+    
     componentDidMount() {
       this.timer = setInterval(()=> this.getItems(), 1000);
     }
@@ -21,7 +21,7 @@ class Staticprogress extends React.Component {
     }
 
     getItems() {
-      fetch("https://jmcconnellportfolio.com/progress.json")
+      fetch("https://jmcconnellportfolio.com/updates.json")
         .then(res => res.json())
         .then(
           result => {
@@ -43,27 +43,25 @@ class Staticprogress extends React.Component {
 
     render() {
       const { error, isLoaded, items } = this.state;
-   
-      return ( 
-            <div>
-              {items.map(item => (
-
-                    <table>
-                    <tbody>
-                    <tr>
-                        <td>
-                        <h1> {item.name} </h1>
-                        </td>
-                        <td>
-                          <ProgressBar bgcolor={"#58ff33"} completed={item.completed} />
-                        </td>
-                    </tr>
-                    </tbody>
-                    </table>
-            
-              ))}
-            </div>         
-      )
+      
+      return (
+        <table className="tableAnimated">
+          <thead >
+            <tr>
+              <th>Name</th>
+              <th>Progress</th>
+            </tr>
+          </thead>
+          <tbody>
+          {items.map(item => (
+              <tr key={item.name}>
+                <td className="NameColumn">{item.name}</td>
+                <td className="ProgressColumn"><ProgressBar bgcolor={"#58ff33"} completed={item.completed} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      );
     }
   }
 

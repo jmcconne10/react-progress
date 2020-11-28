@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Staticprogress from "./Staticprogress";
 import Animatedprogress from "./Animatedprogress";
+import StepProgressBar from "./Stepprogress";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
 
         <Staticprogress />
         <Animatedprogress />
- 
+        <p />
+        <StepProgressBar />
     </div>
 
   );
