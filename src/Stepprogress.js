@@ -63,7 +63,7 @@ class StepProgressBar extends React.Component {
             <Step transition="scale">
               {({ accomplished }) => (
                 <img
-                  style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                  src={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
                   width="40"
                   src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Animhorse.gif"
                 />
@@ -73,8 +73,8 @@ class StepProgressBar extends React.Component {
               {({ accomplished }) => (
                 <img
                   style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                  src={ accomplished ? "https://upload.wikimedia.org/wikipedia/commons/e/e3/Animhorse.gif" : "https://vignette.wikia.nocookie.net/pkmnshuffle/images/9/9d/Pichu.png/revision/latest?cb=20170407222851" }
                   width="40"
-                  src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Animhorse.gif"
                 />
               )}
             </Step>
